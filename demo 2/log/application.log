@@ -936,3 +936,6 @@ Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.
 2023-11-06T21:57:26.810-05:00  WARN 7249 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2023-11-06T21:57:27.222-05:00  INFO 7249 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
 2023-11-06T21:57:27.233-05:00  INFO 7249 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 3.793 seconds (process running for 4.748)
+2023-11-06T22:04:24.251-05:00  INFO 7249 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-06T22:04:24.256-05:00  INFO 7249 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-06T22:04:24.280-05:00  INFO 7249 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
