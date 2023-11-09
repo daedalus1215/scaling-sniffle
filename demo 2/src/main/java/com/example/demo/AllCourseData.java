@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +11,7 @@ public class AllCourseData {
     @Column(name = "course_name")
     private String course_name;
 
+    @Id
     @Column(name = "id")
     private String id;
 
@@ -19,7 +20,6 @@ public class AllCourseData {
     @Column(name = "category")
     private String category;
 
-    @Id
     public String getCourse_name() {
         return course_name;
     }
@@ -51,5 +51,4 @@ public class AllCourseData {
     public void setCategory(String category) {
         this.category = category;
     }
-
 }

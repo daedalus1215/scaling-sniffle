@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.AllCourseData;
 import com.example.demo.repository.CoursesRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +16,11 @@ import java.util.List;
 @RestController
 public class AllCourseDetailsController {
 
+    final private CoursesRepository repository;
 
-    @Autowired
-    CoursesRepository repository;
-
+    public AllCourseDetailsController(CoursesRepository repository) {
+        this.repository = repository;
+    }
 
     @CrossOrigin
     @GetMapping("/allCourseDetails")
@@ -41,6 +42,4 @@ public class AllCourseDetailsController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
-
-
 }
