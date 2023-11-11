@@ -10,5 +10,4 @@ public interface LibraryRepositoryCustom {
 	List<Library> findAllByAuthor(String authorName);
 
 	Library findByName(String bookName);
-
 }

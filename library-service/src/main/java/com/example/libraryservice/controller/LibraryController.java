@@ -84,7 +84,11 @@ public class LibraryController {
     @CrossOrigin
     @GetMapping("getBooks/author")
     public List<Library> getBookByAuthorName(@RequestParam(value = "authorname") String authorname) {
-        return repository.findAllByAuthor(authorname);
+        if (authorname != null) {
+            return repository.findAllByAuthor(authorname);
+        } else {
+            return null;
+        }
     }
 
     @PutMapping("/updateBook/{id}")
