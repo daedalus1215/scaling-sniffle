@@ -15,7 +15,7 @@ public class LibraryService {
         this.repository = repository;
     }
 
-    public String buildId(String isbn, int aisle) {
+    public String buildId(String isbn, String aisle) {
         if (isbn.startsWith("Z")) {
             return "OLD" + isbn + aisle;
         }
