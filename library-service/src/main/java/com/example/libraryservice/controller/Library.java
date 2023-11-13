@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Storage2")
+@Table(name = "storage2")
 public class Library {
     @Column(name = "book_name")
     private String book_name;
@@ -16,7 +16,7 @@ public class Library {
     @Column(name = "isbn")
     private String isbn;
     @Column(name = "aisle")
-    private int aisle;
+    private String aisle;
     @Column(name = "author")
     private String author;
 
@@ -44,11 +44,11 @@ public class Library {
         this.isbn = isbn;
     }
 
-    public int getAisle() {
+    public String getAisle() {
         return aisle;
     }
 
-    public void setAisle(int aisle) {
+    public void setAisle(String aisle) {
         this.aisle = aisle;
     }
 

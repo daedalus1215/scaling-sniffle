@@ -66,7 +66,7 @@ public class testsIT {
 	public Library buildLibrary()
 	{
 		Library lib =new Library();
-		lib.setAisle(322);
+		lib.setAisle("322");
 		lib.setBook_name("Spring");
 		lib.setIsbn("sfes");
 		lib.setAuthor("Rahul Shetty");

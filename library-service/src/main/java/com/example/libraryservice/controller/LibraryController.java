@@ -41,7 +41,7 @@ public class LibraryController {
 //	SpecificProduct specificProduct;
     @Autowired
     Greeting greeting;
-    String baseUrl = "http://localhost:8181";
+    String baseUrl = "http://localhost:8080";
 
     @PostMapping("/addBook")
     public ResponseEntity addBookImplementation(@RequestBody Library library) {
@@ -152,7 +152,6 @@ public class LibraryController {
     public ProductsPrices getProductPrices() throws JsonMappingException, JsonProcessingException {
         productPrices.setBooksPrice(250);
 
-
         long sum = 0;
         for (int i = 0; i < getAllCoursesDetails().length; i++) {
             sum = sum + getAllCoursesDetails()[i].getPrice();
@@ -176,8 +175,6 @@ public class LibraryController {
 
         AllCourseDetails[] allCourseDetails = mapper.readValue(response.getBody(), AllCourseDetails[].class);
         return allCourseDetails;
-
-
     }
 
 }

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "storage2")
+@Table(name = "storage1")
 public class AllCourseData implements Serializable {
         @Column(name = "course_name")
         private String courseName;
