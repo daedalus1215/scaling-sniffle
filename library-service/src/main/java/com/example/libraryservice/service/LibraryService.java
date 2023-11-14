@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public class LibraryService {
 
-    private LibraryRepository repository;
+    private final LibraryRepository repository;
 
     public LibraryService(LibraryRepository repository) {
         this.repository = repository;
@@ -25,10 +25,7 @@ public class LibraryService {
 
     public boolean checkBookAlreadyExist(String id) {
         Optional<Library> lib = repository.findById(id);
-        if (lib.isPresent())
-            return true;
-        else
-            return false;
+        return lib.isPresent();
     }
 
     public Library getBookById(String id) {

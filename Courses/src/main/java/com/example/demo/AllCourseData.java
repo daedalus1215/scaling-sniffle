@@ -9,47 +9,47 @@ import java.io.Serializable;
 @Entity
 @Table(name = "storage1")
 public class AllCourseData implements Serializable {
-        @Column(name = "course_name")
-        private String courseName;
+    @Column(name = "course_name")
+    private String courseName;
 
-        @Id
-        @Column(name = "id")
-        private String id;
+    @Id
+    @Column(name = "id")
+    private String id;
 
-        @Column(name = "price")
-        private int price;
-        @Column(name = "category")
-        private String category;
+    @Column(name = "price")
+    private int price;
+    @Column(name = "category")
+    private String category;
 
-        public String getCourseName() {
-            return courseName;
-        }
+    public String getCourseName() {
+        return courseName;
+    }
 
-        public void setCourseName(String course_name) {
-            this.courseName = course_name;
-        }
+    public void setCourseName(String course_name) {
+        this.courseName = course_name;
+    }
 
-        public String getId() {
-            return id;
-        }
+    public String getId() {
+        return id;
+    }
 
-        public void setId(String id) {
-            this.id = id;
-        }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-        public int getPrice() {
-            return price;
-        }
+    public int getPrice() {
+        return price;
+    }
 
-        public void setPrice(int price) {
-            this.price = price;
-        }
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
-        public String getCategory() {
-            return category;
-        }
+    public String getCategory() {
+        return category;
+    }
 
-        public void setCategory(String category) {
-            this.category = category;
-        }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
