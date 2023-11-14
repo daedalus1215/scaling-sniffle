@@ -1,8 +1,7 @@
 package com.example.libraryservice;
 
 import org.json.JSONException;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -11,7 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-
+import org.junit.jupiter.api.Assertions;
 import com.example.libraryservice.controller.Library;
 
 @SpringBootTest
@@ -19,7 +18,7 @@ public class testsIT {
 
 	//mvn test
 	//TestRestTemplate Rest Assured
-	@org.junit.jupiter.api.Test
+	@Test
 	public void getAuthorNameBooksTest() throws JSONException
 	{
 		String expected= "[\r\n" + 
@@ -56,11 +55,8 @@ public class testsIT {
 		
 		HttpEntity<Library> request = new HttpEntity<Library>(buildLibrary(),headers);
 		ResponseEntity<String>	response =	restTemplate.postForEntity("http://localhost:8080/addBook", request, String.class);
-		Assert.assertEquals(HttpStatus.CREATED, response.getStatusCode());
-		Assert.assertEquals(buildLibrary().getId(),response.getHeaders().get("unique").get(0));
-		
-		
-		
+		Assertions.assertEquals(HttpStatus.CREATED, response.getStatusCode());
+		Assertions.assertEquals(buildLibrary().getId(),response.getHeaders().get("unique").get(0));
 	}
 	
 	public Library buildLibrary()
@@ -72,7 +68,6 @@ public class testsIT {
 		lib.setAuthor("Rahul Shetty");
 		lib.setId("sfes322");
 		return lib;
-		
 	}
 	
 	

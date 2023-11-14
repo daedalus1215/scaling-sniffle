@@ -122,7 +122,7 @@ public class LibraryController {
 
 
     @GetMapping("/getProductDetails/{name}")
-    public SpecificProduct getProductFullDetails(@PathVariable(value = "name") String name) throws JsonMappingException, JsonProcessingException {
+    public SpecificProduct getProductFullDetails(@PathVariable(value = "name") String name) throws JsonProcessingException {
 
         SpecificProduct specificProduct = new SpecificProduct();
         TestRestTemplate restTemplate = new TestRestTemplate();
@@ -149,7 +149,7 @@ public class LibraryController {
 
     @CrossOrigin
     @GetMapping("/getProductPrices")
-    public ProductsPrices getProductPrices() throws JsonMappingException, JsonProcessingException {
+    public ProductsPrices getProductPrices() throws JsonProcessingException {
         productPrices.setBooksPrice(250);
 
         long sum = 0;
@@ -166,7 +166,7 @@ public class LibraryController {
         baseUrl = url;
     }
 
-    public AllCourseDetails[] getAllCoursesDetails() throws JsonMappingException, JsonProcessingException {
+    public AllCourseDetails[] getAllCoursesDetails() throws JsonProcessingException {
 
         TestRestTemplate restTemplate = new TestRestTemplate();
 
