@@ -14,7 +14,7 @@
 	<name>library-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -35,11 +35,11 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/au.com.dius.pact.provider/junit5 -->
 		<dependency>
-			<groupId>au.com.dius.pact.consumer</groupId>
+			<groupId>au.com.dius.pact.provider</groupId>
 			<artifactId>junit5</artifactId>
-			<version>4.2.7</version>
-			<scope>test</scope>
+			<version>4.2.21</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
