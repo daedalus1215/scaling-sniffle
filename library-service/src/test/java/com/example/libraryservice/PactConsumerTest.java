@@ -39,13 +39,9 @@ public class PactConsumerTest {
                         .stringType("course_name")
                         .stringType("id")
                         .integerType("price", 10)
-                        .stringType("category").closeObject()).toPact();
-
-
+                        .stringType("category").closeObject())
+                .toPact();
     }
-    //  PactFlow
-
-    // -> PactFlow Server  (contract file to server)
 
     @Pact(consumer = "BooksCatalogue")
     public RequestResponsePact PactallCoursesDetailsPriceCheck(PactDslWithProvider builder) {
@@ -74,40 +70,29 @@ public class PactConsumerTest {
 
     }
 
-
     @Test
     @PactTestFor(pactMethod = "PactallCoursesDetailsPriceCheck", port = "9999")
-
-    public void testAllProductsSum(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
-        String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
+    public void testAllProductsSum(MockServer mockServer) throws JsonProcessingException {
+        final String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
         libraryController.setBaseUrl(mockServer.getUrl());
 
-        ProductsPrices productsPrices = libraryController.getProductPrices();
-        ObjectMapper obj = new ObjectMapper();
-        String jsonActual = obj.writeValueAsString(productsPrices);
+        final ProductsPrices productsPrices = libraryController.getProductPrices();
+        final ObjectMapper obj = new ObjectMapper();
+        final String jsonActual = obj.writeValueAsString(productsPrices);
 
         Assertions.assertEquals(expectedJson, jsonActual);
-
-
     }
 
     @Test
     @PactTestFor(pactMethod = "getCourseByName", port = "9999")
 
     public void testByProductName(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
-
         libraryController.setBaseUrl(mockServer.getUrl());
-
-        String expectedJson = "{\"product\":{\"book_name\":\"Appium\",\"id\":\"fdsefr343\",\"isbn\":\"fdsefr3\",\"aisle\":43,\"author\":\"Rahul Shetty\"},\"price\":44,\"category\":\"mobile\"}";
-
-        SpecificProduct specificProduct = libraryController.getProductFullDetails("Appium");
-
-        ObjectMapper obj = new ObjectMapper();
-        String jsonActual = obj.writeValueAsString(specificProduct);
-
+        final String expectedJson = "{\"product\":{\"book_name\":\"Appium\",\"id\":\"fdsefr343\",\"isbn\":\"fdsefr3\",\"aisle\":43,\"author\":\"Rahul Shetty\"},\"price\":44,\"category\":\"mobile\"}";
+        final SpecificProduct specificProduct = libraryController.getProductFullDetails("Appium");
+        final ObjectMapper obj = new ObjectMapper();
+        final String jsonActual = obj.writeValueAsString(specificProduct);
         Assertions.assertEquals(expectedJson, jsonActual);
-
-
     }
 
     @Pact(consumer = "BooksCatalogue")

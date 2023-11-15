@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.libraryservice.SpringBootRestServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.956 s - in com.example.libraryservice.SpringBootRestServiceApplicationTests

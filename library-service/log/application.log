@@ -1,29 +1,27 @@
-2023-11-13 21:26:36.961  INFO 11250 --- [main] c.e.l.LibraryServiceApplication          : Starting LibraryServiceApplication using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 11250 (/Users/laurenceadams/programming/scaling-sniffle/library-service/target/classes started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
-2023-11-13 21:26:37.005  INFO 11250 --- [main] c.e.l.LibraryServiceApplication          : No active profile set, falling back to 1 default profile: "default"
-2023-11-13 21:26:37.998  INFO 11250 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-13 21:26:38.123  INFO 11250 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 1 JPA repository interfaces.
-2023-11-13 21:26:38.692  INFO 11250 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
-2023-11-13 21:26:38.701  INFO 11250 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-11-13 21:26:38.701  INFO 11250 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
-2023-11-13 21:26:38.910  INFO 11250 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-11-13 21:26:38.910  INFO 11250 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1835 ms
-2023-11-13 21:26:39.143  INFO 11250 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-13 21:26:39.158  WARN 11250 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2023-11-13 21:26:39.537  INFO 11250 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-13 21:26:39.713  INFO 11250 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-13 21:26:39.746  INFO 11250 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-11-13 21:26:39.852  INFO 11250 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-11-13 21:26:39.930  INFO 11250 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-11-13 21:26:40.316  INFO 11250 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-13 21:26:40.324  INFO 11250 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-13 21:26:40.607  WARN 11250 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-13 21:26:41.079  INFO 11250 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-11-13 21:26:41.130  INFO 11250 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
-2023-11-13 21:26:41.150  INFO 11250 --- [main] c.e.l.LibraryServiceApplication          : Started LibraryServiceApplication in 4.667 seconds (JVM running for 5.473)
-2023-11-13 21:26:41.544  INFO 11250 --- [RMI TCP Connection(5)-192.168.1.238] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-11-13 21:26:41.544  INFO 11250 --- [RMI TCP Connection(5)-192.168.1.238] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-11-13 21:26:41.546  INFO 11250 --- [RMI TCP Connection(5)-192.168.1.238] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-11-13 21:54:28.093  WARN 12358 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+2023-11-14 01:22:58.125  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h55m1s787ms).
+2023-11-14 01:45:57.483  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=22m59s358ms).
+2023-11-14 04:15:24.797  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h29m27s314ms).
+2023-11-14 06:28:22.679  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h12m57s884ms).
+2023-11-14 08:37:24.770  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h9m2s90ms).
+2023-11-14 10:57:52.424  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h20m27s655ms).
+2023-11-14 11:00:52.028  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m59s603ms).
+2023-11-14 12:03:45.993  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m53s965ms).
+2023-11-14 12:07:59.060  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m13s67ms).
+2023-11-14 12:09:07.582  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m8s521ms).
+2023-11-14 12:12:32.496  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m24s916ms).
+2023-11-14 14:06:25.417  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h53m52s920ms).
+2023-11-14 14:08:58.367  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m32s951ms).
+2023-11-14 14:09:58.774  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m407ms).
+2023-11-14 14:11:50.862  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m52s87ms).
+2023-11-14 14:21:12.817  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m21s955ms).
+2023-11-14 17:42:12.702  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h20m59s885ms).
+2023-11-14 18:26:50.278  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m37s571ms).
+2023-11-14 18:36:57.366  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m7s93ms).
+2023-11-14 18:48:16.916  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m19s550ms).
+2023-11-14 19:21:21.391  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m34s428ms).
+2023-11-14 20:00:50.740  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m29s298ms).
+2023-11-14 20:07:02.177  WARN 11250 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m11s435ms).
+2023-11-14 21:26:11.371  WARN 18282 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -32,32 +30,27 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2023-11-13 21:54:28.112  INFO 12358 --- [main] .l.SpringBootRestServiceApplicationTests : Starting SpringBootRestServiceApplicationTests using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 12358 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
-2023-11-13 21:54:28.113  INFO 12358 --- [main] .l.SpringBootRestServiceApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2023-11-13 21:54:30.033  INFO 12358 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-13 21:54:30.118  INFO 12358 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interfaces.
-2023-11-13 21:54:31.630  INFO 12358 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-13 21:54:31.648  WARN 12358 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2023-11-13 21:54:32.305  INFO 12358 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-13 21:54:32.717  INFO 12358 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-13 21:54:32.777  INFO 12358 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-11-13 21:54:32.850  INFO 12358 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-11-13 21:54:32.980  INFO 12358 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-11-13 21:54:33.406  INFO 12358 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-13 21:54:33.416  INFO 12358 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-13 21:54:33.850  WARN 12358 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-13 21:54:35.421  INFO 12358 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-11-13 21:54:35.422  INFO 12358 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-11-13 21:54:35.436  INFO 12358 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-11-13 21:54:35.492  INFO 12358 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 69 ms
-2023-11-13 21:54:35.591  INFO 12358 --- [main] .l.SpringBootRestServiceApplicationTests : Started SpringBootRestServiceApplicationTests in 7.971 seconds (JVM running for 10.305)
-2023-11-13 21:54:36.158  INFO 12358 --- [main] c.e.l.controller.LibraryController       : Book  is deleted 
-2023-11-13 21:54:36.204  INFO 12358 --- [main] c.e.l.controller.LibraryController       : Book do not exist so creating one
-2023-11-13 21:54:36.321  INFO 12358 --- [main] c.e.l.controller.LibraryController       : Book do not exist so creating one
-2023-11-13 21:54:36.341  INFO 12358 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-11-13 21:54:36.344  INFO 12358 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-11-13 21:54:36.368  INFO 12358 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-11-13 21:55:15.567  WARN 12395 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+2023-11-14 21:26:11.396  INFO 18282 --- [main] c.e.libraryservice.PactConsumerTest      : Starting PactConsumerTest using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 18282 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
+2023-11-14 21:26:11.397  INFO 18282 --- [main] c.e.libraryservice.PactConsumerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14 21:26:13.183  INFO 18282 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14 21:26:13.310  INFO 18282 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interfaces.
+2023-11-14 21:26:14.087  INFO 18282 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14 21:26:14.106  WARN 18282 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-11-14 21:26:14.657  INFO 18282 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14 21:26:15.048  INFO 18282 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14 21:26:15.089  INFO 18282 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-11-14 21:26:15.266  INFO 18282 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-14 21:26:15.431  INFO 18282 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-11-14 21:26:16.071  INFO 18282 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-14 21:26:16.079  INFO 18282 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:26:17.055  WARN 18282 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-14 21:26:18.452  INFO 18282 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-14 21:26:18.545  INFO 18282 --- [main] c.e.libraryservice.PactConsumerTest      : Started PactConsumerTest in 7.59 seconds (JVM running for 9.661)
+2023-11-14 21:26:18.984  INFO 18282 --- [main] a.c.d.p.c.junit5.PactConsumerTestExt     : Writing pacts out to default directory
+2023-11-14 21:26:19.011  INFO 18282 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:26:19.014  INFO 18282 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14 21:26:19.032  INFO 18282 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14 21:37:11.766  WARN 18610 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -66,32 +59,27 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2023-11-13 21:55:15.589  INFO 12395 --- [main] .l.SpringBootRestServiceApplicationTests : Starting SpringBootRestServiceApplicationTests using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 12395 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
-2023-11-13 21:55:15.589  INFO 12395 --- [main] .l.SpringBootRestServiceApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2023-11-13 21:55:17.466  INFO 12395 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-13 21:55:17.563  INFO 12395 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 1 JPA repository interfaces.
-2023-11-13 21:55:19.062  INFO 12395 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-13 21:55:19.076  WARN 12395 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2023-11-13 21:55:19.601  INFO 12395 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-13 21:55:19.997  INFO 12395 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-13 21:55:20.076  INFO 12395 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-11-13 21:55:20.169  INFO 12395 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-11-13 21:55:20.400  INFO 12395 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-11-13 21:55:20.867  INFO 12395 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-13 21:55:20.880  INFO 12395 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-13 21:55:21.317  WARN 12395 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-13 21:55:22.655  INFO 12395 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-11-13 21:55:22.656  INFO 12395 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-11-13 21:55:22.672  INFO 12395 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-11-13 21:55:22.704  INFO 12395 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 47 ms
-2023-11-13 21:55:22.762  INFO 12395 --- [main] .l.SpringBootRestServiceApplicationTests : Started SpringBootRestServiceApplicationTests in 7.668 seconds (JVM running for 9.719)
-2023-11-13 21:55:23.474  INFO 12395 --- [main] c.e.l.controller.LibraryController       : Book  is deleted 
-2023-11-13 21:55:23.507  INFO 12395 --- [main] c.e.l.controller.LibraryController       : Book do not exist so creating one
-2023-11-13 21:55:23.633  INFO 12395 --- [main] c.e.l.controller.LibraryController       : Book do not exist so creating one
-2023-11-13 21:55:23.671  INFO 12395 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-11-13 21:55:23.675  INFO 12395 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-11-13 21:55:23.693  INFO 12395 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-11-13 22:18:27.935  WARN 13211 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+2023-11-14 21:37:11.786  INFO 18610 --- [main] c.e.libraryservice.PactConsumerTest      : Starting PactConsumerTest using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 18610 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
+2023-11-14 21:37:11.790  INFO 18610 --- [main] c.e.libraryservice.PactConsumerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14 21:37:13.601  INFO 18610 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14 21:37:13.721  INFO 18610 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113 ms. Found 1 JPA repository interfaces.
+2023-11-14 21:37:14.506  INFO 18610 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14 21:37:14.516  WARN 18610 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-11-14 21:37:15.033  INFO 18610 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14 21:37:15.501  INFO 18610 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14 21:37:15.572  INFO 18610 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-11-14 21:37:15.944  INFO 18610 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-14 21:37:16.069  INFO 18610 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-11-14 21:37:16.621  INFO 18610 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-14 21:37:16.631  INFO 18610 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:37:17.765  WARN 18610 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-14 21:37:19.185  INFO 18610 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-14 21:37:19.268  INFO 18610 --- [main] c.e.libraryservice.PactConsumerTest      : Started PactConsumerTest in 7.921 seconds (JVM running for 10.054)
+2023-11-14 21:37:19.774  INFO 18610 --- [main] a.c.d.p.c.junit5.PactConsumerTestExt     : Writing pacts out to default directory
+2023-11-14 21:37:19.805  INFO 18610 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:37:19.809  INFO 18610 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14 21:37:19.839  INFO 18610 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14 21:39:20.255  WARN 18679 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -100,23 +88,102 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2023-11-13 22:18:27.954  INFO 13211 --- [main] c.e.libraryservice.PactConsumerTest      : Starting PactConsumerTest using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 13211 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
-2023-11-13 22:18:27.957  INFO 13211 --- [main] c.e.libraryservice.PactConsumerTest      : No active profile set, falling back to 1 default profile: "default"
-2023-11-13 22:18:29.769  INFO 13211 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-13 22:18:29.876  INFO 13211 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 1 JPA repository interfaces.
-2023-11-13 22:18:30.667  INFO 13211 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-13 22:18:30.682  WARN 13211 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2023-11-13 22:18:31.185  INFO 13211 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-13 22:18:31.530  INFO 13211 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-13 22:18:31.573  INFO 13211 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-11-13 22:18:31.784  INFO 13211 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-11-13 22:18:31.945  INFO 13211 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-11-13 22:18:32.628  INFO 13211 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-13 22:18:32.636  INFO 13211 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-13 22:18:33.616  WARN 13211 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-13 22:18:35.028  INFO 13211 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-11-13 22:18:35.120  INFO 13211 --- [main] c.e.libraryservice.PactConsumerTest      : Started PactConsumerTest in 7.625 seconds (JVM running for 9.794)
-2023-11-13 22:18:35.594  INFO 13211 --- [main] a.c.d.p.c.junit5.PactConsumerTestExt     : Writing pacts out to default directory
-2023-11-13 22:18:35.630  INFO 13211 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-11-13 22:18:35.633  INFO 13211 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-11-13 22:18:35.653  INFO 13211 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14 21:39:20.271  INFO 18679 --- [main] .l.SpringBootRestServiceApplicationTests : Starting SpringBootRestServiceApplicationTests using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 18679 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
+2023-11-14 21:39:20.272  INFO 18679 --- [main] .l.SpringBootRestServiceApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2023-11-14 21:39:22.125  INFO 18679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14 21:39:22.193  INFO 18679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 1 JPA repository interfaces.
+2023-11-14 21:39:23.698  INFO 18679 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14 21:39:23.710  WARN 18679 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-11-14 21:39:24.403  INFO 18679 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14 21:39:24.760  INFO 18679 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14 21:39:24.818  INFO 18679 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-11-14 21:39:24.877  INFO 18679 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-14 21:39:24.982  INFO 18679 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-11-14 21:39:25.352  INFO 18679 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-14 21:39:25.362  INFO 18679 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:39:25.875  WARN 18679 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-14 21:39:27.322  INFO 18679 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-14 21:39:27.324  INFO 18679 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-14 21:39:27.357  INFO 18679 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-14 21:39:27.443  INFO 18679 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 117 ms
+2023-11-14 21:39:27.566  INFO 18679 --- [main] .l.SpringBootRestServiceApplicationTests : Started SpringBootRestServiceApplicationTests in 7.719 seconds (JVM running for 9.724)
+2023-11-14 21:39:27.956  INFO 18679 --- [main] c.e.l.controller.LibraryController       : Book  is deleted 
+2023-11-14 21:39:27.994  INFO 18679 --- [main] c.e.l.controller.LibraryController       : Book do not exist so creating one
+2023-11-14 21:39:28.089  INFO 18679 --- [main] c.e.l.controller.LibraryController       : Book do not exist so creating one
+2023-11-14 21:39:28.127  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.libraryservice.PactConsumerTest], using SpringBootContextLoader
+2023-11-14 21:39:28.131  INFO 18679 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.libraryservice.PactConsumerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-11-14 21:39:28.132  INFO 18679 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.libraryservice.PactConsumerTest]: PactConsumerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-11-14 21:39:28.138  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.libraryservice.LibraryServiceApplication for test class com.example.libraryservice.PactConsumerTest
+2023-11-14 21:39:28.143  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-11-14 21:39:28.143  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4582da06, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@523e019c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1c10eb3a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@49f32bcb, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1af29a19, org.springframework.test.context.support.DirtiesContextTestExecutionListener@38624a3a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@23b02f37, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@73cdf5f9, org.springframework.test.context.event.EventPublishingTestExecutionListener@7d619bcb, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@57f83dc7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@75937998, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@696d28ee, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@18a349cb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@ea3491d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6012bee8]
+2023-11-14 21:39:28.208  WARN 18679 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/Users/laurenceadams/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/Users/laurenceadams/.m2/repository/org/json/json/20160212/json-20160212.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2023-11-14 21:39:28.211  INFO 18679 --- [main] c.e.libraryservice.PactConsumerTest      : Starting PactConsumerTest using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 18679 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
+2023-11-14 21:39:28.212  INFO 18679 --- [main] c.e.libraryservice.PactConsumerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14 21:39:28.680  INFO 18679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14 21:39:28.713  INFO 18679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interfaces.
+2023-11-14 21:39:28.937  INFO 18679 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-11-14 21:39:28.937  WARN 18679 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-11-14 21:39:29.008  INFO 18679 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-11-14 21:39:29.077  INFO 18679 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14 21:39:29.090  INFO 18679 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-11-14 21:39:29.180  INFO 18679 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-14 21:39:29.181  INFO 18679 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:39:29.974  WARN 18679 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-14 21:39:30.540  INFO 18679 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-14 21:39:30.579  INFO 18679 --- [main] c.e.libraryservice.PactConsumerTest      : Started PactConsumerTest in 2.431 seconds (JVM running for 12.737)
+2023-11-14 21:39:30.655  INFO 18679 --- [main] a.c.d.p.c.junit5.PactConsumerTestExt     : Writing pacts out to default directory
+2023-11-14 21:39:30.673  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.libraryservice.LibraryServiceApplicationTests], using SpringBootContextLoader
+2023-11-14 21:39:30.674  INFO 18679 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.libraryservice.LibraryServiceApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-11-14 21:39:30.675  INFO 18679 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.libraryservice.LibraryServiceApplicationTests]: LibraryServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-11-14 21:39:30.680  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.libraryservice.LibraryServiceApplication for test class com.example.libraryservice.LibraryServiceApplicationTests
+2023-11-14 21:39:30.685  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-11-14 21:39:30.685  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3edb09b9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2e29a7d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4af8ff3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7b7268db, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1d8230cd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b257072, org.springframework.test.context.transaction.TransactionalTestExecutionListener@738da6f2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1b513ce8, org.springframework.test.context.event.EventPublishingTestExecutionListener@17596317, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@375f276e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@297bbd41, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3b5f72fa, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@67c2ff5d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@29e8c09c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5d8de155]
+2023-11-14 21:39:30.707  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.libraryservice.PactVerificationTest], using SpringBootContextLoader
+2023-11-14 21:39:30.708  INFO 18679 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.libraryservice.PactVerificationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-11-14 21:39:30.708  INFO 18679 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.libraryservice.PactVerificationTest]: PactVerificationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-11-14 21:39:30.710  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.libraryservice.LibraryServiceApplication for test class com.example.libraryservice.PactVerificationTest
+2023-11-14 21:39:30.713  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-11-14 21:39:30.715  INFO 18679 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@70b037ac, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1dbe592f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4e09c3b0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@64f34c91, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@158f0af4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a174e4b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7a8316fa, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@46a5aff, org.springframework.test.context.event.EventPublishingTestExecutionListener@695f382c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@29fa465a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4b2ca159, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1d47b761, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@d4962bd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@76fa3dd8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@58f27c37]
+2023-11-14 21:39:30.738  INFO 18679 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:39:30.741  INFO 18679 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14 21:39:30.758  INFO 18679 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14 21:39:30.762  INFO 18679 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:39:30.762  INFO 18679 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-11-14 21:39:30.768  INFO 18679 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-11-14 21:49:27.838  WARN 19718 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/Users/laurenceadams/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/Users/laurenceadams/.m2/repository/org/json/json/20160212/json-20160212.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2023-11-14 21:49:27.861  INFO 19718 --- [main] c.e.libraryservice.PactConsumerTest      : Starting PactConsumerTest using Java 18.0.2 on MacBook-Pro.attlocal.net with PID 19718 (started by laurenceadams in /Users/laurenceadams/programming/scaling-sniffle/library-service)
+2023-11-14 21:49:27.863  INFO 19718 --- [main] c.e.libraryservice.PactConsumerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14 21:49:29.753  INFO 19718 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14 21:49:29.829  INFO 19718 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interfaces.
+2023-11-14 21:49:30.672  INFO 19718 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14 21:49:30.685  WARN 19718 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-11-14 21:49:31.244  INFO 19718 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14 21:49:31.910  INFO 19718 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14 21:49:31.958  INFO 19718 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-11-14 21:49:32.134  INFO 19718 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-14 21:49:32.230  INFO 19718 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-11-14 21:49:32.784  INFO 19718 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-14 21:49:32.796  INFO 19718 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:49:33.738  WARN 19718 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-14 21:49:35.344  INFO 19718 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-14 21:49:35.438  INFO 19718 --- [main] c.e.libraryservice.PactConsumerTest      : Started PactConsumerTest in 8.075 seconds (JVM running for 10.55)
+2023-11-14 21:49:35.827  INFO 19718 --- [main] a.c.d.p.c.junit5.PactConsumerTestExt     : Writing pacts out to default directory
+2023-11-14 21:49:35.860  INFO 19718 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14 21:49:35.864  INFO 19718 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14 21:49:35.880  INFO 19718 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
