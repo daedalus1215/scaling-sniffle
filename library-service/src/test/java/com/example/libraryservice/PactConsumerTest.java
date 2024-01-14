@@ -20,6 +20,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Objects;
+
 @SpringBootTest
 @ExtendWith(PactConsumerTestExt.class)
 @PactTestFor(providerName = "CoursesCatalogue")
@@ -35,11 +37,11 @@ public class PactConsumerTest {
                 .path("/allCourseDetails")
                 .willRespondWith()
                 .status(200)
-                .body(PactDslJsonArray.arrayMinLike(3)
+                .body(Objects.requireNonNull(PactDslJsonArray.arrayMinLike(3)
                         .stringType("course_name")
                         .stringType("id")
                         .integerType("price", 10)
-                        .stringType("category").closeObject())
+                        .stringType("category").closeObject()))
                 .toPact();
     }
 
