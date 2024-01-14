@@ -3,7 +3,6 @@ package com.example.libraryservice.controller;
 import com.example.libraryservice.repository.LibraryRepository;
 import com.example.libraryservice.service.LibraryService;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
