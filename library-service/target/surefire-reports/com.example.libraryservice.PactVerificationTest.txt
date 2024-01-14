@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.example.libraryservice.PactVerificationTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.02 s <<< FAILURE! - in com.example.libraryservice.PactVerificationTest
-pactVerificationTestTemplate{PactVerificationContext}  Time elapsed: 0.02 s  <<< ERROR!
-org.junit.platform.commons.PreconditionViolationException: You must register at least one TestTemplateInvocationContextProvider that supports @TestTemplate method [void com.example.libraryservice.PactVerificationTest.pactVerificationTestTemplate(au.com.dius.pact.provider.junit5.PactVerificationContext)]
-
