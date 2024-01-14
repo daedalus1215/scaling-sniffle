@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -124,10 +124,14 @@ public class LibraryController {
     public SpecificProduct getProductFullDetails(@PathVariable(value = "name") String name) throws JsonProcessingException {
 
         SpecificProduct specificProduct = new SpecificProduct();
-        TestRestTemplate restTemplate = new TestRestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
         Library lib = repository.findByName(name);
         specificProduct.setProduct(lib);
+        logger.info("Calling URL: " + baseUrl + "/getCourseByName/" + name);
+
         ResponseEntity<String> response = restTemplate.getForEntity(baseUrl + "/getCourseByName/" + name, String.class);
+        logger.info("Response: " + response.getStatusCodeValue());
+
         if (response.getStatusCode().is4xxClientError()) {
             specificProduct.setMsg(name + "Category and price details are not available at this time");
         } else {
@@ -167,7 +171,7 @@ public class LibraryController {
 
     public AllCourseDetails[] getAllCoursesDetails() throws JsonProcessingException {
 
-        TestRestTemplate restTemplate = new TestRestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
 
         ResponseEntity<String> response = restTemplate.getForEntity(baseUrl + "/allCourseDetails", String.class);
         ObjectMapper mapper = new ObjectMapper();
