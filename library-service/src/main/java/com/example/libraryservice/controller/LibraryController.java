@@ -122,15 +122,12 @@ public class LibraryController {
 
     @GetMapping("/getProductDetails/{name}")
     public SpecificProduct getProductFullDetails(@PathVariable(value = "name") String name) throws JsonProcessingException {
-
         SpecificProduct specificProduct = new SpecificProduct();
         RestTemplate restTemplate = new RestTemplate();
         Library lib = repository.findByName(name);
         specificProduct.setProduct(lib);
-        logger.info("Calling URL: " + baseUrl + "/getCourseByName/" + name);
 
         ResponseEntity<String> response = restTemplate.getForEntity(baseUrl + "/getCourseByName/" + name, String.class);
-        logger.info("Response: " + response.getStatusCodeValue());
 
         if (response.getStatusCode().is4xxClientError()) {
             specificProduct.setMsg(name + "Category and price details are not available at this time");
@@ -139,14 +136,10 @@ public class LibraryController {
 
             AllCourseDetails allCourseDetails = mapper.readValue(response.getBody(), AllCourseDetails.class);
 
-
             specificProduct.setCategory(allCourseDetails.getCategory());
             specificProduct.setPrice(allCourseDetails.getPrice());
-
         }
         return specificProduct;
-
-
     }
 
 
