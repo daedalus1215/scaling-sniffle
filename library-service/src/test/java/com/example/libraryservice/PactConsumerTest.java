@@ -1,19 +1,5 @@
 package com.example.libraryservice;
 
-import com.example.libraryservice.controller.LibraryController;
-import com.example.libraryservice.controller.ProductsPrices;
-import com.example.libraryservice.controller.SpecificProduct;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-
 import au.com.dius.pact.consumer.MockServer;
 import au.com.dius.pact.consumer.dsl.PactDslJsonArray;
 import au.com.dius.pact.consumer.dsl.PactDslJsonBody;
@@ -22,6 +8,17 @@ import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
 import au.com.dius.pact.consumer.junit5.PactTestFor;
 import au.com.dius.pact.core.model.RequestResponsePact;
 import au.com.dius.pact.core.model.annotations.Pact;
+import com.example.libraryservice.controller.LibraryController;
+import com.example.libraryservice.controller.ProductsPrices;
+import com.example.libraryservice.controller.SpecificProduct;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @ExtendWith(PactConsumerTestExt.class)
@@ -31,20 +28,19 @@ public class PactConsumerTest {
     @Autowired
     private LibraryController libraryController;
 
-	@Pact(consumer="BooksCatalogue")
-	public RequestResponsePact PactallCoursesDetailsConfig(PactDslWithProvider builder)
-	{
-		return builder.given("courses exist")
-		.uponReceiving("getting all courses details")
-		.path("/allCourseDetails")
-		.willRespondWith()
-		.status(200)
-		.body(PactDslJsonArray.arrayMinLike(3)
-				.stringType("course_name")
-				.stringType("id")
-				.integerType("price", 10)
-				.stringType("category").closeObject()).toPact();
-	}
+    @Pact(consumer = "BooksCatalogue")
+    public RequestResponsePact PactallCoursesDetailsConfig(PactDslWithProvider builder) {
+        return builder.given("courses exist")
+                .uponReceiving("getting all courses details")
+                .path("/allCourseDetails")
+                .willRespondWith()
+                .status(200)
+                .body(PactDslJsonArray.arrayMinLike(3)
+                        .stringType("course_name")
+                        .stringType("id")
+                        .integerType("price", 10)
+                        .stringType("category").closeObject()).toPact();
+    }
     //  PactFlow
 
     // -> PactFlow Server  (contract file to server)
@@ -72,7 +68,8 @@ public class PactConsumerTest {
                 .status(200)
                 .body(new PactDslJsonBody()
                         .integerType("price", 44)
-                        .stringType("category", "mobile")).toPact();
+                        .stringType("category", "mobile"))
+                .toPact();
     }
 
 
@@ -110,33 +107,30 @@ public class PactConsumerTest {
         Assertions.assertEquals(expectedJson, jsonActual);
     }
 
-//    @Pact(consumer = "BooksCatalogue")
-//    public RequestResponsePact getCourseByNameNotExist(PactDslWithProvider builder) {
-//        return builder.given("Course Appium does not exist", "name", "Appium")
-//                .uponReceiving("Appium course Does not exist")
-//                .path("/getCourseByName/Appium")
-//                .willRespondWith()
-//                .status(404)
-//                .toPact();
-//    }
-//
+    @Pact(consumer = "BooksCatalogue")
+    public RequestResponsePact getCourseByNameNotExist(PactDslWithProvider builder) {
+        return builder.given("Course Appium does not exist", "name", "Appium")
+                .uponReceiving("Appium course Does not exist")
+                .path("/getCourseByName/Appium")
+                .willRespondWith()
+                .status(404)
+                .toPact();
+    }
+
 //    @Test
 //    @PactTestFor(pactMethod = "getCourseByNameNotExist", port = "9999")
 //    public void testByProductNameNotExist(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
-//
+//        // Arrange
 //        libraryController.setBaseUrl(mockServer.getUrl());
 //
-//        String expectedJson = "{\"product\":{\"book_name\":\"Appium\",\"id\":\"fdsefr343\",\"isbn\":\"fdsefr3\",\"aisle\":43,\"author\":\"Rahul Shetty\"},\"msg\":\"AppiumCategory and price details are not available at this time\"}";
+//        final String expectedJson = "{\"product\":{\"book_name\":\"Appium\",\"id\":\"fdsefr343\",\"isbn\":\"fdsefr3\",\"aisle\":43,\"author\":\"Rahul Shetty\"},\"msg\":\"AppiumCategory and price details are not available at this time\"}";
+//        ObjectMapper obj = new ObjectMapper();
 //
-//        SpecificProduct specificProduct = libraryController.getProductFullDetails("Appium");
+//        // Act
+//        libraryController.getProductFullDetails("Appium");
 //
-////        ObjectMapper obj = new ObjectMapper();
-////        String jsonActual = obj.writeValueAsString(specificProduct);
-//
-////        Assertions.assertEquals(expectedJson, jsonActual);
-//
-//
+//        // Assert
+//        final String jsonActual = obj.writeValueAsString(specificProduct);
+//        Assertions.assertEquals(expectedJson, jsonActual);
 //    }
-
-
 }
