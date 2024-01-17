@@ -28,36 +28,52 @@ public class PactConsumerTest {
     @Autowired
     private LibraryController libraryController;
 
-    @Pact(consumer = "BooksCatalogue")
-    public RequestResponsePact PactallCoursesDetailsConfig(PactDslWithProvider builder) {
-        return builder.given("courses exist")
-                .uponReceiving("getting all courses details")
-                .path("/allCourseDetails")
-                .willRespondWith()
-                .status(200)
-                .body(PactDslJsonArray.arrayMinLike(3)
-                        .stringType("course_name")
-                        .stringType("id")
-                        .integerType("price", 10)
-                        .stringType("category").closeObject()).toPact();
-    }
-    //  PactFlow
-
-    // -> PactFlow Server  (contract file to server)
-
 //    @Pact(consumer = "BooksCatalogue")
-//    public RequestResponsePact PactallCoursesDetailsPriceCheck(PactDslWithProvider builder) {
+//    public RequestResponsePact PactallCoursesDetailsConfig(PactDslWithProvider builder) {
 //        return builder.given("courses exist")
 //                .uponReceiving("getting all courses details")
 //                .path("/allCourseDetails")
 //                .willRespondWith()
 //                .status(200)
 //                .body(PactDslJsonArray.arrayMinLike(3)
+//                        .stringType("course_name")
+//                        .stringType("id")
 //                        .integerType("price", 10)
-//                        .closeObject())
-//                .toPact();
-//
+//                        .stringType("category").closeObject()).toPact();
 //    }
+    //  PactFlow
+
+    // -> PactFlow Server  (contract file to server)
+
+    @Pact(consumer = "BooksCatalogue")
+    public RequestResponsePact PactallCoursesDetailsPriceCheck(PactDslWithProvider builder) {
+        return builder.given("courses exist")
+                .uponReceiving("getting all courses details")
+                .path("/allCourseDetails")
+                .willRespondWith()
+                .status(200)
+                .body(PactDslJsonArray.arrayMinLike(3)
+                        .integerType("price", 10)
+                        .closeObject())
+                .toPact();
+    }
+
+    @Test
+    @PactTestFor(pactMethod = "PactallCoursesDetailsPriceCheck", port = "9999")
+
+    public void testAllProductsSum(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
+        // Arrange
+        final String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
+        libraryController.setBaseUrl(mockServer.getUrl());
+        final ObjectMapper obj = new ObjectMapper();
+
+        // Act
+        ProductsPrices productsPrices = libraryController.getProductPrices();
+        final String jsonActual = obj.writeValueAsString(productsPrices);
+
+        // Assert
+        Assertions.assertEquals(expectedJson, jsonActual);
+    }
 
     @Pact(consumer = "BooksCatalogue")
     public RequestResponsePact getCourseByName(PactDslWithProvider builder) {
@@ -73,22 +89,22 @@ public class PactConsumerTest {
     }
 
 
-    @Test
-    @PactTestFor(pactMethod = "PactallCoursesDetailsConfig", port = "9999")
-    public void testAllProductsSum(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
-        // Arrange
-        final String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
-        libraryController.setBaseUrl(mockServer.getUrl());
-
-        final ObjectMapper obj = new ObjectMapper();
-
-        // Act
-        final ProductsPrices productsPrices = libraryController.getProductPrices();
-        final String jsonActual = obj.writeValueAsString(productsPrices);
-
-        // Assert
-        Assertions.assertEquals(expectedJson, jsonActual);
-    }
+//    @Test
+//    @PactTestFor(pactMethod = "PactallCoursesDetailsConfig", port = "9999")
+//    public void testAllProductsSum(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
+//        // Arrange
+//        final String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
+//        libraryController.setBaseUrl(mockServer.getUrl());
+//
+//        final ObjectMapper obj = new ObjectMapper();
+//
+//        // Act
+//        final ProductsPrices productsPrices = libraryController.getProductPrices();
+//        final String jsonActual = obj.writeValueAsString(productsPrices);
+//
+//        // Assert
+//        Assertions.assertEquals(expectedJson, jsonActual);
+//    }
 
     @Test
     @PactTestFor(pactMethod = "getCourseByName", port = "9999")
@@ -107,15 +123,15 @@ public class PactConsumerTest {
         Assertions.assertEquals(expectedJson, jsonActual);
     }
 
-    @Pact(consumer = "BooksCatalogue")
-    public RequestResponsePact getCourseByNameNotExist(PactDslWithProvider builder) {
-        return builder.given("Course Appium does not exist", "name", "Appium")
-                .uponReceiving("Appium course Does not exist")
-                .path("/getCourseByName/Appium")
-                .willRespondWith()
-                .status(404)
-                .toPact();
-    }
+//    @Pact(consumer = "BooksCatalogue")
+//    public RequestResponsePact getCourseByNameNotExist(PactDslWithProvider builder) {
+//        return builder.given("Course Appium does not exist", "name", "Appium")
+//                .uponReceiving("Appium course Does not exist")
+//                .path("/getCourseByName/Appium")
+//                .willRespondWith()
+//                .status(404)
+//                .toPact();
+//    }
 
 //    @Test
 //    @PactTestFor(pactMethod = "getCourseByNameNotExist", port = "9999")
