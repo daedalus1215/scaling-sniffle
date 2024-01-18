@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -30,6 +32,7 @@ import java.util.List;
 public class LibraryController {
 
     private static final Logger logger = LoggerFactory.getLogger(LibraryController.class);
+    private final RestTemplate restTemplate = new RestTemplateBuilder().build();
     @Autowired
     LibraryRepository repository;
     @Autowired
@@ -121,10 +124,9 @@ public class LibraryController {
 
 
     @GetMapping("/getProductDetails/{name}")
-    public SpecificProduct getProductFullDetails(@PathVariable(value = "name") String name) throws JsonProcessingException {
-        SpecificProduct specificProduct = new SpecificProduct();
-        RestTemplate restTemplate = new RestTemplate();
-        Library lib = repository.findByName(name);
+    public SpecificProduct getProductFullDetails(@PathVariable(value = "name") String name) throws JsonProcessingException, HttpClientErrorException {
+        final SpecificProduct specificProduct = new SpecificProduct();
+        final Library lib = repository.findByName(name);
         specificProduct.setProduct(lib);
 
         ResponseEntity<String> response = restTemplate.getForEntity(baseUrl + "/getCourseByName/" + name, String.class);
