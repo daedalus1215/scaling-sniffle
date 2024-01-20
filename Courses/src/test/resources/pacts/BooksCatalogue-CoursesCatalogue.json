@@ -4,6 +4,36 @@
   },
   "interactions": [
     {
+      "description": "Appium course does not exist",
+      "providerStates": [
+        {
+          "name": "Course Appium does not exist"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/getCourseByName/Appium"
+      },
+      "response": {
+        "status": 404
+      }
+    },
+    {
+      "description": "Get the Appium course details",
+      "providerStates": [
+        {
+          "name": "Course Appium does not exist"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/getCourseByName/Appium"
+      },
+      "response": {
+        "status": 404
+      }
+    },
+    {
       "description": "Get the Appium course details",
       "providerStates": [
         {

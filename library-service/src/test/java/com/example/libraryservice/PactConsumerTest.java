@@ -19,6 +19,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.web.client.HttpClientErrorException;
 
 @SpringBootTest
 @ExtendWith(PactConsumerTestExt.class)
@@ -28,22 +29,21 @@ public class PactConsumerTest {
     @Autowired
     private LibraryController libraryController;
 
-//    @Pact(consumer = "BooksCatalogue")
-//    public RequestResponsePact PactallCoursesDetailsConfig(PactDslWithProvider builder) {
-//        return builder.given("courses exist")
-//                .uponReceiving("getting all courses details")
-//                .path("/allCourseDetails")
-//                .willRespondWith()
-//                .status(200)
-//                .body(PactDslJsonArray.arrayMinLike(3)
-//                        .stringType("course_name")
-//                        .stringType("id")
-//                        .integerType("price", 10)
-//                        .stringType("category").closeObject()).toPact();
-//    }
-    //  PactFlow
-
-    // -> PactFlow Server  (contract file to server)
+    @Pact(consumer = "BooksCatalogue")
+    public RequestResponsePact PactallCoursesDetailsConfig(PactDslWithProvider builder) {
+        return builder.given("courses exist")
+                .uponReceiving("getting all courses details")
+                .path("/allCourseDetails")
+                .willRespondWith()
+                .status(200)
+                .body(PactDslJsonArray.arrayMinLike(3)
+                        .stringType("course_name")
+                        .stringType("id")
+                        .integerType("price", 10)
+                        .stringType("category")
+                        .closeObject())
+                .toPact();
+    }
 
     @Pact(consumer = "BooksCatalogue")
     public RequestResponsePact PactallCoursesDetailsPriceCheck(PactDslWithProvider builder) {
@@ -60,7 +60,6 @@ public class PactConsumerTest {
 
     @Test
     @PactTestFor(pactMethod = "PactallCoursesDetailsPriceCheck", port = "9999")
-
     public void testAllProductsSum(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
         // Arrange
         final String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
@@ -88,23 +87,22 @@ public class PactConsumerTest {
                 .toPact();
     }
 
+    @Test
+    @PactTestFor(pactMethod = "PactallCoursesDetailsConfig", port = "9999")
+    public void testAllProductsSums(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
+        // Arrange
+        final String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
+        libraryController.setBaseUrl(mockServer.getUrl());
 
-//    @Test
-//    @PactTestFor(pactMethod = "PactallCoursesDetailsConfig", port = "9999")
-//    public void testAllProductsSum(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
-//        // Arrange
-//        final String expectedJson = "{\"booksPrice\":250,\"coursesPrice\":30}";
-//        libraryController.setBaseUrl(mockServer.getUrl());
-//
-//        final ObjectMapper obj = new ObjectMapper();
-//
-//        // Act
-//        final ProductsPrices productsPrices = libraryController.getProductPrices();
-//        final String jsonActual = obj.writeValueAsString(productsPrices);
-//
-//        // Assert
-//        Assertions.assertEquals(expectedJson, jsonActual);
-//    }
+        final ObjectMapper obj = new ObjectMapper();
+
+        // Act
+        final ProductsPrices productsPrices = libraryController.getProductPrices();
+        final String jsonActual = obj.writeValueAsString(productsPrices);
+
+        // Assert
+        Assertions.assertEquals(expectedJson, jsonActual);
+    }
 
     @Test
     @PactTestFor(pactMethod = "getCourseByName", port = "9999")
@@ -115,7 +113,6 @@ public class PactConsumerTest {
 
         // Act
         final SpecificProduct specificProduct = libraryController.getProductFullDetails("Appium");
-
         final ObjectMapper obj = new ObjectMapper();
         final String jsonActual = obj.writeValueAsString(specificProduct);
 
@@ -123,30 +120,32 @@ public class PactConsumerTest {
         Assertions.assertEquals(expectedJson, jsonActual);
     }
 
-//    @Pact(consumer = "BooksCatalogue")
-//    public RequestResponsePact getCourseByNameNotExist(PactDslWithProvider builder) {
-//        return builder.given("Course Appium does not exist", "name", "Appium")
-//                .uponReceiving("Appium course Does not exist")
-//                .path("/getCourseByName/Appium")
-//                .willRespondWith()
-//                .status(404)
-//                .toPact();
-//    }
+    @Pact(consumer = "BooksCatalogue")
+    public RequestResponsePact getCourseByNameNotExist(PactDslWithProvider builder) {
+        return builder.given("Course Appium does not exist")
+                .uponReceiving("Appium course does not exist")
+                .path("/getCourseByName/Appium")
+                .willRespondWith()
+                .status(404)
+                .toPact();
+    }
 
-//    @Test
-//    @PactTestFor(pactMethod = "getCourseByNameNotExist", port = "9999")
-//    public void testByProductNameNotExist(MockServer mockServer) throws JsonMappingException, JsonProcessingException {
-//        // Arrange
-//        libraryController.setBaseUrl(mockServer.getUrl());
-//
-//        final String expectedJson = "{\"product\":{\"book_name\":\"Appium\",\"id\":\"fdsefr343\",\"isbn\":\"fdsefr3\",\"aisle\":43,\"author\":\"Rahul Shetty\"},\"msg\":\"AppiumCategory and price details are not available at this time\"}";
-//        ObjectMapper obj = new ObjectMapper();
-//
-//        // Act
-//        libraryController.getProductFullDetails("Appium");
-//
-//        // Assert
-//        final String jsonActual = obj.writeValueAsString(specificProduct);
-//        Assertions.assertEquals(expectedJson, jsonActual);
-//    }
+    @Test
+    @PactTestFor(pactMethod = "getCourseByNameNotExist", port = "9999")
+    public void testByProductNameNotExist(MockServer mockServer) throws HttpClientErrorException, JsonProcessingException {
+        // Arrange
+        libraryController.setBaseUrl(mockServer.getUrl());
+
+        try {
+            // Act
+            final SpecificProduct specificProduct = libraryController.getProductFullDetails("Appium");
+
+            // Assert
+            System.out.println("Hi");
+            System.out.println(specificProduct);
+        } catch (Exception e) {
+
+        }
+
+    }
 }

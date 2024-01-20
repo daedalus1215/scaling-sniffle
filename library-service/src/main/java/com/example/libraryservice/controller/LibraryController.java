@@ -133,14 +133,16 @@ public class LibraryController {
 
         if (response.getStatusCode().is4xxClientError()) {
             specificProduct.setMsg(name + "Category and price details are not available at this time");
-        } else {
-            ObjectMapper mapper = new ObjectMapper();
-
-            AllCourseDetails allCourseDetails = mapper.readValue(response.getBody(), AllCourseDetails.class);
-
-            specificProduct.setCategory(allCourseDetails.getCategory());
-            specificProduct.setPrice(allCourseDetails.getPrice());
+            return specificProduct;
         }
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        AllCourseDetails allCourseDetails = mapper.readValue(response.getBody(), AllCourseDetails.class);
+
+        specificProduct.setCategory(allCourseDetails.getCategory());
+        specificProduct.setPrice(allCourseDetails.getPrice());
+
         return specificProduct;
     }
 
