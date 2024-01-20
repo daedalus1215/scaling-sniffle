@@ -31,7 +31,7 @@ public class AllCourseDetailsController {
     @RequestMapping("/getCourseByName/{name}")
     public AllCourseData getBookById(@PathVariable(value = "name") String name) {
         try {
-            AllCourseData lib = repository.findById(name).get();
+            AllCourseData lib = repository.findByCourseName(name).get();
             return lib;
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);

@@ -2,6 +2,8 @@ package com.example.demo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -10,15 +12,25 @@ import java.io.Serializable;
 @Table(name = "Storage1")
 public class AllCourseData implements Serializable {
     @Id
-    @Column(name = "course_name")
-    private String courseName;
-
     @Column(name = "id")
     private String id;
+    @Column(name = "course_name")
+    private String courseName;
     @Column(name = "price")
     private int price;
     @Column(name = "category")
     private String category;
+
+    public AllCourseData(String id, String courseName, int price, String category) {
+        this.id = id;
+        this.courseName = courseName;
+        this.price = price;
+        this.category = category;
+    }
+
+    public AllCourseData() {
+
+    }
 
     public String getCourseName() {
         return courseName;
