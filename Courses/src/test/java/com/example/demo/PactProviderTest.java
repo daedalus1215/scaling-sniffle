@@ -63,7 +63,6 @@ public class PactProviderTest {
 
     @State(value = "Course Appium does not exist", action = StateChangeAction.SETUP)
     public void coursesAppiumNotExist() {
-
         final Optional<AllCourseData> appium = coursesRepository.findByCourseName("Appium");
         if (appium.isPresent()) {
             coursesRepository.delete(appium.get());

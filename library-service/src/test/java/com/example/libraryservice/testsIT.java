@@ -59,15 +59,8 @@ public class testsIT {
 		Assertions.assertEquals(buildLibrary().getId(),response.getHeaders().get("unique").get(0));
 	}
 	
-	public Library buildLibrary()
-	{
-		Library lib =new Library();
-		lib.setAisle("322");
-		lib.setBook_name("Spring");
-		lib.setIsbn("sfes");
-		lib.setAuthor("Rahul Shetty");
-		lib.setId("sfes322");
-		return lib;
+	public Library buildLibrary() {
+		return new Library("Spring", "sfes322", "sfes", "322", "Rahul Shetty");
 	}
 	
 	

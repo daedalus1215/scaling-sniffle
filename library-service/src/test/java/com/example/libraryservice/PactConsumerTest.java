@@ -117,12 +117,12 @@ public class PactConsumerTest {
         final String jsonActual = obj.writeValueAsString(specificProduct);
 
         // Assert
-        Assertions.assertEquals(expectedJson, jsonActual);
+          Assertions.assertEquals(expectedJson, jsonActual);
     }
 
     @Pact(consumer = "BooksCatalogue")
     public RequestResponsePact getCourseByNameNotExist(PactDslWithProvider builder) {
-        return builder.given("Course Appium does not exist")
+        return builder.given("Course Appium does not exist", "name", "Appium")
                 .uponReceiving("Appium course does not exist")
                 .path("/getCourseByName/Appium")
                 .willRespondWith()
